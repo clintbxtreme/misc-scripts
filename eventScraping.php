@@ -17,7 +17,7 @@ function find($regex, $page) {
 }
 
 function getEvents() {
-	$data = file_get_contents("~/data/events");
+	$data = file_get_contents("~/data/events.data");
 	return json_decode($data, true);
 }
 
@@ -25,7 +25,7 @@ function saveEvents($data) {
 	if (is_array($data)) {
 		$data = json_encode($data);
 	}
-	$filename = "~/data/events";
+	$filename = "~/data/events.data";
 	file_put_contents($filename, $data);
 }
 
